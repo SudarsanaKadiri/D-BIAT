@@ -1,0 +1,8 @@
+# The data are not public: never add them to this repository
+data/
+# Results (contain participant-level values)
+outputs/
+# Python / Jupyter
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store

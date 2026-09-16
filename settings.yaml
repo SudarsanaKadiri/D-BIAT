@@ -1,0 +1,43 @@
+# =====================================================================
+# D-BIAT analysis settings: every analysis choice in one place.
+# The notebooks read this file through dbiat_analysis.load_settings().
+# =====================================================================
+
+paths:
+  # Data file (the 135 analyzed participants), relative to this file.
+  # The data are not public; see README.md.
+  data_file: data/DBIAT_data_N135.csv
+  outputs: outputs                  # tables/, figures/, derived/
+
+# Pre-processing, as described in the manuscript
+preprocessing:
+  drop_last_trial_of_block: true    # the 20th trial of every block is removed (114 trials remain)
+  subject_fast_rt_ms: 300           # a participant is excluded if more than ...
+  subject_fast_rt_max_prop: 0.10    # ... this proportion of trials is faster than subject_fast_rt_ms
+  subject_min_accuracy: 0.30        # a participant is excluded if accuracy is below this value
+  trial_rt_min_ms: 400              # trials with RT outside [min, max] are removed
+  trial_rt_max_ms: 2000
+
+stats:
+  random_seed: 20260915
+  n_bootstrap: 2000                 # AUC confidence intervals
+  n_permutations: 2000              # AUC permutation tests
+  n_chi2_permutations: 20000        # Monte Carlo chi-square tests
+  cv_folds: 5                       # repeated cross-validation of the classification rule
+  cv_repeats: 200
+  prevalences: [0.05, 0.10, 0.20]   # predictive values (Supplementary Table S4)
+
+measures:                           # column name -> label used in tables and figures
+  life_rt: "Life:Me RT (overall)"
+  death_rt: "Death:Me RT (overall)"
+  life_rt_correct: "Life:Me RT (correct)"
+  death_rt_correct: "Death:Me RT (correct)"
+  life_er: "Life:Me ER"
+  death_er: "Death:Me ER"
+  D_RT: "D_RT"
+  D_ER: "D_ER"
+  D_Composite: "D_Composite"
+
+figures:
+  dpi_tiff: 600
+  submission_width_mm: 180
