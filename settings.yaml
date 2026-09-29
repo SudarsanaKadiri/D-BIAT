@@ -7,6 +7,8 @@ paths:
   # Data file (the 135 analyzed participants), relative to this file.
   # The data are not public; see README.md.
   data_file: data/DBIAT_data_N135.csv
+  # Clinical scores (PHQ-9, SIS, GAD-7) of the same participants; used only by notebook 08 (additional_analyses.py)
+  participants_file: data/DBIAT_clinical_scores_N135.csv
   outputs: outputs                  # tables/, figures/, derived/
 
 # Pre-processing, as described in the manuscript

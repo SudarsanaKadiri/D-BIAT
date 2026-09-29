@@ -3,7 +3,7 @@
 # Usage (from this folder):  bash run_all.sh
 set -euo pipefail
 cd "$(dirname "$0")/notebooks"
-for nb in 0[1-7]_*.ipynb; do
+for nb in 0[1-8]_*.ipynb; do
   echo "== $nb"
   jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=3600 "$nb"
 done
