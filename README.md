@@ -40,7 +40,7 @@ The analyses use two files:
 
 1. Install Python 3.11 and the packages: `pip install -r requirements.txt`
 2. Create a folder `data/` and put the two data files in it.
-3. Run all notebooks: `bash run_all.sh` (a few minutes), or open them in Jupyter and run them in order.
+3. Open the notebooks in Jupyter and run them in order (01 to 08); this takes a few minutes.
 
 Results are written to `outputs/` (`tables/`, `figures/`, and `derived/`).
 
